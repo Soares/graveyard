@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<head>
+    <meta charset="utf-8">
+    <title>Equatize!</title>
+    <link rel="icon" type="image/png" href="{{ MEDIA_URL }}equatize/img/favicon.png">
+    {% load media %}
+    {% block links %}
+    {% include_media "main.css" %}
+    {% endblock %}
+</head>
+<body>
+    <div id="head">
+        <h1>Equatize!</h1>
+    </div>
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+    {% block scripts %}
+    {% include_media "main.js" %}
+    {% endblock %}
+</body>

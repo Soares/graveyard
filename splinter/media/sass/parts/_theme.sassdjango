@@ -1,0 +1,45 @@
+=ui-header-like
+  {{ header }}
+  padding: .5em 1em
+  .ui-icon
+    {{ header.icon }}
+  a
+    color: {{ header.color }}
+
+
+=ui-default-like
+  {{ default }}
+  .ui-icon
+    {{ default.icon }}
+  a
+    color: {{ default.color }}
+
+
+=ui-hover-like
+  {{ hover }}
+  .ui-icon
+    {{ hover.icon }}
+  a
+    color: {{ hover.color }}
+
+=ui-active-like
+  {{ active }}
+  .ui-icon
+    {{ hover.icon }}
+  a
+    color: {{ active.color }}
+
+
+=ui-widget-like
+  +ui-default-like
+  &:hover
+    +ui-hover-like
+  &:active
+    +ui-active-like
+
+
+{% for state in states %}
+{% for name, value in state.attributes.iteritems %}
+!{{ name }} = {{ value }}
+{% endfor %}
+{% endfor %}

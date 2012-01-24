@@ -1,0 +1,447 @@
+
+calling relationships:
+
+*** ./main.py ***
+    main.main -> main.initialize
+    main.main -> main.run
+  --> /home/nate/Code/realapps/vee/src/api/__init__.py
+    main.run -> __init__.run
+
+*** /home/nate/Code/realapps/vee/src/api/__init__.py ***
+    __init__.height -> __init__.y
+    __init__.initialize -> __init__.mainloop
+  --> /home/nate/Code/realapps/vee/src/api/style.py
+    __init__.initialize -> style.<module>
+    __init__.initialize -> style.color
+    __init__.initialize -> style.initialize
+  --> /home/nate/Code/realapps/vee/src/core.py
+    __init__.initialize -> core.setup
+    __init__.mainloop -> core.dispatch
+    __init__.mainloop -> core.update
+  --> /usr/local/lib/python3.1/curses/wrapper.py
+    __init__.run -> wrapper.wrapper
+  --> /usr/local/lib/python3.1/locale.py
+    __init__.run -> locale.setlocale
+    __init__.width -> __init__.x
+
+*** /home/nate/Code/realapps/vee/src/api/canvas.py ***
+    canvas.<module> -> canvas.Canvas
+    canvas.__init__ -> canvas.redraw
+  --> /home/nate/Code/realapps/vee/src/api/style.py
+    canvas.__init__ -> style.color
+    canvas.take_cursor -> canvas.set_cursor
+
+*** /home/nate/Code/realapps/vee/src/api/line.py ***
+    line.<module> -> line.Line
+
+*** /home/nate/Code/realapps/vee/src/api/style.py ***
+    style.color -> style.<lambda>
+
+*** /home/nate/Code/realapps/vee/src/config.py ***
+    config.<module> -> config.Config
+  --> /usr/local/lib/python3.1/re.py
+    config.<module> -> re.compile
+  --> /usr/local/lib/python3.1/collections.py
+    config.__init__ -> collections.__init__
+    config.register -> config.__init__
+    config.register -> collections.__setitem__
+
+*** /home/nate/Code/realapps/vee/src/core.py ***
+    core.dispatch -> core.mode
+  --> /home/nate/Code/realapps/vee/src/modes/base.py
+    core.dispatch -> base.dispatch
+  --> /home/nate/Code/realapps/vee/src/api/__init__.py
+    core.setup -> __init__.height
+    core.setup -> __init__.width
+  --> /home/nate/Code/realapps/vee/src/config.py
+    core.setup -> config.<module>
+    core.setup -> config.__init__
+  --> /home/nate/Code/realapps/vee/src/settings.py
+    core.setup -> settings.<module>
+  --> /home/nate/Code/realapps/vee/src/windows/__init__.py
+    core.setup -> __init__.<module>
+  --> /home/nate/Code/realapps/vee/src/windows/nodes/__init__.py
+    core.setup -> __init__.<module>
+  --> /home/nate/Code/realapps/vee/src/windows/nodes/manager.py
+    core.setup -> manager.__init__
+  --> /home/nate/Code/realapps/vee/src/api/__init__.py
+    core.update -> __init__.update
+  --> /home/nate/Code/realapps/vee/src/api/canvas.py
+    core.update -> canvas.take_cursor
+    core.update -> core.window
+  --> /home/nate/Code/realapps/vee/src/windows/nodes/manager.py
+    core.window -> manager.current
+
+*** /home/nate/Code/realapps/vee/src/dispatch/__init__.py ***
+  --> /home/nate/Code/realapps/vee/src/dispatch/dispatcher.py
+    __init__.<module> -> dispatcher.<module>
+
+*** /home/nate/Code/realapps/vee/src/dispatch/dispatcher.py ***
+    dispatcher.<module> -> dispatcher.Signal
+  --> /home/nate/Code/realapps/vee/src/dispatch/saferef.py
+    dispatcher.<module> -> saferef.<module>
+    dispatcher.connect -> dispatcher._make_id
+    dispatcher.connect -> saferef.safeRef
+  --> /usr/local/lib/python3.1/inspect.py
+    dispatcher.connect -> inspect.<module>
+    dispatcher.connect -> inspect.getargspec
+
+*** /home/nate/Code/realapps/vee/src/dispatch/saferef.py ***
+    saferef.<module> -> saferef.BoundMethodWeakref
+    saferef.<module> -> saferef.BoundNonDescriptorMethodWeakref
+  --> /usr/local/lib/python3.1/weakref.py
+    saferef.BoundMethodWeakref -> weakref.__init__
+
+*** /home/nate/Code/realapps/vee/src/exceptions.py ***
+    exceptions.<module> -> exceptions.NotEnoughSpace
+    exceptions.<module> -> exceptions.OutOfBounds
+
+*** /home/nate/Code/realapps/vee/src/modes/__init__.py ***
+  --> /home/nate/Code/realapps/vee/src/modes/normal.py
+    __init__.<module> -> normal.<module>
+
+*** /home/nate/Code/realapps/vee/src/modes/base.py ***
+    base.<module> -> base.Mode
+  --> /home/nate/Code/realapps/vee/src/modes/normal.py
+    base.dispatch -> normal.<lambda>
+
+*** /home/nate/Code/realapps/vee/src/modes/normal.py ***
+  --> /home/nate/Code/realapps/vee/src/api/__init__.py
+    normal.<lambda> -> __init__.quit
+  --> /home/nate/Code/realapps/vee/src/modes/base.py
+    normal.<module> -> base.<module>
+    normal.<module> -> normal.Normal
+  --> /home/nate/Code/realapps/vee/src/windows/api.py
+    normal.<module> -> api.<module>
+
+*** /home/nate/Code/realapps/vee/src/settings.py ***
+  --> /home/nate/Code/realapps/vee/src/modes/__init__.py
+    settings.<module> -> __init__.<module>
+  --> /home/nate/Code/realapps/vee/src/windows/settings.py
+    settings.<module> -> settings.<module>
+
+*** /home/nate/Code/realapps/vee/src/utilities/decorators.py ***
+  --> /home/nate/Code/realapps/vee/src/utilities/list.py
+    decorators.<lambda> -> list.expose
+    decorators.<module> -> decorators.with_fn
+  --> /usr/local/lib/python3.1/functools.py
+    decorators.with_fn -> functools.update_wrapper
+
+*** /home/nate/Code/realapps/vee/src/utilities/list.py ***
+  --> /home/nate/Code/realapps/vee/src/utilities/decorators.py
+    list.<module> -> decorators.<module>
+    list.<module> -> decorators.class_decorator
+    list.expose -> list.attach
+
+*** /home/nate/Code/realapps/vee/src/windows/api.py ***
+  --> /home/nate/Code/realapps/vee/src/windows/signals.py
+    api.<module> -> signals.<module>
+
+*** /home/nate/Code/realapps/vee/src/windows/controllers/__init__.py ***
+  --> /home/nate/Code/realapps/vee/src/windows/controllers/horizontal.py
+    __init__.<module> -> horizontal.<module>
+  --> /home/nate/Code/realapps/vee/src/windows/controllers/tabular.py
+    __init__.<module> -> tabular.<module>
+  --> /home/nate/Code/realapps/vee/src/windows/controllers/vertical.py
+    __init__.<module> -> vertical.<module>
+
+*** /home/nate/Code/realapps/vee/src/windows/controllers/base.py ***
+    base.<module> -> base.Controller
+
+*** /home/nate/Code/realapps/vee/src/windows/controllers/directional.py ***
+  --> /home/nate/Code/realapps/vee/src/windows/shapes.py
+    directional.<lambda> -> shapes.__init__
+  --> /home/nate/Code/realapps/vee/src/exceptions.py
+    directional.<module> -> exceptions.<module>
+  --> /home/nate/Code/realapps/vee/src/utilities/__init__.py
+    directional.<module> -> __init__.<module>
+  --> /home/nate/Code/realapps/vee/src/utilities/itertools.py
+    directional.<module> -> itertools.<module>
+  --> /home/nate/Code/realapps/vee/src/windows/controllers/base.py
+    directional.<module> -> base.<module>
+    directional.<module> -> directional.Directional
+  --> /home/nate/Code/realapps/vee/src/windows/nodes/window.py
+    directional.<module> -> window.<module>
+  --> /home/nate/Code/realapps/vee/src/windows/shapes.py
+    directional.<module> -> shapes.<module>
+  --> /home/nate/Code/realapps/vee/src/windows/utilities.py
+    directional.<module> -> utilities.<module>
+    directional.__init__ -> directional.<lambda>
+
+*** /home/nate/Code/realapps/vee/src/windows/controllers/horizontal.py ***
+  --> /home/nate/Code/realapps/vee/src/windows/controllers/directional.py
+    horizontal.<module> -> directional.<module>
+    horizontal.<module> -> horizontal.Horizontal
+
+*** /home/nate/Code/realapps/vee/src/windows/controllers/tabular.py ***
+    tabular.<module> -> tabular.Tabular
+
+*** /home/nate/Code/realapps/vee/src/windows/controllers/vertical.py ***
+    vertical.<module> -> vertical.Vertical
+
+*** /home/nate/Code/realapps/vee/src/windows/modules/tab/__init__.py ***
+  --> /home/nate/Code/realapps/vee/src/windows/modules/tab/box.py
+    __init__.<module> -> box.<module>
+  --> /home/nate/Code/realapps/vee/src/dispatch/dispatcher.py
+    __init__.enable -> dispatcher.connect
+    __init__.enable -> __init__.connections
+
+*** /home/nate/Code/realapps/vee/src/windows/modules/tab/bits.py ***
+    bits.<module> -> bits.Afters
+    bits.<module> -> bits.Befores
+    bits.<module> -> bits.Bit
+    bits.<module> -> bits.BitList
+    bits.<module> -> bits.BitSet
+    bits.<module> -> bits.SelectedBit
+
+*** /home/nate/Code/realapps/vee/src/windows/modules/tab/box.py ***
+  --> /home/nate/Code/realapps/vee/src/api/line.py
+    box.<module> -> line.<module>
+  --> /home/nate/Code/realapps/vee/src/api/style.py
+    box.<module> -> style.color
+  --> /home/nate/Code/realapps/vee/src/config.py
+    box.<module> -> config.define
+    box.<module> -> config.register
+    box.<module> -> config.set
+  --> /home/nate/Code/realapps/vee/src/windows/modules/tab/bits.py
+    box.<module> -> bits.<module>
+    box.<module> -> box.Barrer
+    box.<module> -> box.Boxer
+    box.<module> -> box.__init__
+
+*** /home/nate/Code/realapps/vee/src/windows/nodes/__init__.py ***
+  --> /home/nate/Code/realapps/vee/src/windows/nodes/horizontal.py
+    __init__.<module> -> horizontal.<module>
+  --> /home/nate/Code/realapps/vee/src/windows/nodes/manager.py
+    __init__.<module> -> manager.<module>
+  --> /home/nate/Code/realapps/vee/src/windows/nodes/tabular.py
+    __init__.<module> -> tabular.<module>
+  --> /home/nate/Code/realapps/vee/src/windows/nodes/vertical.py
+    __init__.<module> -> vertical.<module>
+
+*** /home/nate/Code/realapps/vee/src/windows/nodes/base.py ***
+  --> /home/nate/Code/realapps/vee/src/windows/shapes.py
+    base.<lambda> -> shapes.__init__
+  --> /home/nate/Code/realapps/vee/src/utilities/decorators.py
+    base.<module> -> decorators.<lambda>
+  --> /home/nate/Code/realapps/vee/src/utilities/list.py
+    base.<module> -> list.<module>
+    base.<module> -> base.ListNode
+    base.<module> -> base.Node
+    base.__init__ -> base.<lambda>
+  --> /home/nate/Code/realapps/vee/src/windows/nodes/manager.py
+    base.__init__ -> manager.<lambda>
+  --> /home/nate/Code/realapps/vee/src/windows/nodes/window.py
+    base.__init__ -> window.<lambda>
+
+*** /home/nate/Code/realapps/vee/src/windows/nodes/directional.py ***
+    directional.<module> -> directional.Directional
+
+*** /home/nate/Code/realapps/vee/src/windows/nodes/horizontal.py ***
+  --> /home/nate/Code/realapps/vee/src/windows/controllers/__init__.py
+    horizontal.<module> -> __init__.<module>
+  --> /home/nate/Code/realapps/vee/src/windows/nodes/directional.py
+    horizontal.<module> -> directional.<module>
+    horizontal.<module> -> horizontal.Horizontal
+  --> /home/nate/Code/realapps/vee/src/windows/controllers/directional.py
+    horizontal.Horizontal -> directional.__init__
+
+*** /home/nate/Code/realapps/vee/src/windows/nodes/manager.py ***
+  --> /home/nate/Code/realapps/vee/src/windows/shapes.py
+    manager.<lambda> -> shapes.__init__
+    manager.<module> -> manager.WindowManager
+  --> /home/nate/Code/realapps/vee/src/windows/nodes/base.py
+    manager.__init__ -> base.__init__
+  --> /home/nate/Code/realapps/vee/src/windows/nodes/window.py
+    manager.__init__ -> window.__init__
+    manager.current -> window.current
+
+*** /home/nate/Code/realapps/vee/src/windows/nodes/tabular.py ***
+    tabular.<module> -> tabular.Tabular
+
+*** /home/nate/Code/realapps/vee/src/windows/nodes/vertical.py ***
+    vertical.<module> -> vertical.Vertical
+  --> /home/nate/Code/realapps/vee/src/windows/controllers/directional.py
+    vertical.Vertical -> directional.__init__
+
+*** /home/nate/Code/realapps/vee/src/windows/nodes/window.py ***
+  --> /home/nate/Code/realapps/vee/src/windows/shapes.py
+    window.<lambda> -> shapes.__init__
+  --> /home/nate/Code/realapps/vee/src/api/canvas.py
+    window.<module> -> canvas.<module>
+  --> /home/nate/Code/realapps/vee/src/windows/nodes/base.py
+    window.<module> -> base.<module>
+    window.<module> -> window.Window
+  --> /home/nate/Code/realapps/vee/src/api/canvas.py
+    window.__init__ -> canvas.__init__
+  --> /home/nate/Code/realapps/vee/src/windows/nodes/base.py
+    window.__init__ -> base.__init__
+
+*** /home/nate/Code/realapps/vee/src/windows/settings.py ***
+  --> /home/nate/Code/realapps/vee/src/api/compatability.py
+    settings.<module> -> compatability.<module>
+    settings.<module> -> compatability.unicode
+  --> /home/nate/Code/realapps/vee/src/api/style.py
+    settings.<module> -> style.color
+  --> /home/nate/Code/realapps/vee/src/config.py
+    settings.<module> -> config.define
+    settings.<module> -> config.register
+  --> /home/nate/Code/realapps/vee/src/windows/modules/__init__.py
+    settings.<module> -> __init__.<module>
+  --> /home/nate/Code/realapps/vee/src/windows/modules/tab/__init__.py
+    settings.<module> -> __init__.<module>
+    settings.<module> -> __init__.enable
+
+*** /home/nate/Code/realapps/vee/src/windows/shapes.py ***
+    shapes.<module> -> shapes.AgnosticDynamicPair
+    shapes.<module> -> shapes.AgnosticPair
+    shapes.<module> -> shapes.Constraint
+    shapes.<module> -> shapes.DynamicConstraint
+    shapes.<module> -> shapes.DynamicPair
+    shapes.<module> -> shapes.DynamicRect
+    shapes.<module> -> shapes.ListNodeRect
+    shapes.<module> -> shapes.Pair
+    shapes.<module> -> shapes.Rect
+    shapes.<module> -> shapes.RectDiff
+
+*** /home/nate/Code/realapps/vee/src/windows/signals.py ***
+  --> /home/nate/Code/realapps/vee/src/dispatch/__init__.py
+    signals.<module> -> __init__.<module>
+  --> /home/nate/Code/realapps/vee/src/dispatch/dispatcher.py
+    signals.<module> -> dispatcher.__init__
+
+*** /home/nate/Code/realapps/vee/src/windows/utilities.py ***
+    utilities.<module> -> utilities.scruncher
+
+*** /usr/local/lib/python3.1/_abcoll.py ***
+  --> /usr/local/lib/python3.1/os.py
+    _abcoll.get -> os.__getitem__
+  --> /usr/local/lib/python3.1/abc.py
+    _abcoll.update -> abc.__instancecheck__
+
+*** /usr/local/lib/python3.1/abc.py ***
+  --> /usr/local/lib/python3.1/_weakrefset.py
+    abc.__instancecheck__ -> _weakrefset.__contains__
+    abc.__instancecheck__ -> abc.__subclasscheck__
+  --> /usr/local/lib/python3.1/_abcoll.py
+    abc.__subclasscheck__ -> _abcoll.__subclasshook__
+  --> /usr/local/lib/python3.1/_weakrefset.py
+    abc.__subclasscheck__ -> _weakrefset.__contains__
+    abc.__subclasscheck__ -> _weakrefset.__init__
+    abc.__subclasscheck__ -> _weakrefset.__iter__
+    abc.__subclasscheck__ -> _weakrefset.add
+    abc.__subclasscheck__ -> abc.__subclasscheck__
+
+*** /usr/local/lib/python3.1/collections.py ***
+  --> /usr/local/lib/python3.1/_abcoll.py
+    collections.__init__ -> _abcoll.update
+    collections.namedtuple -> collections.<genexpr>
+  --> <string>
+    collections.namedtuple -> <string>.<module>
+
+*** /usr/local/lib/python3.1/curses/__init__.py ***
+  --> /usr/local/lib/python3.1/_abcoll.py
+    __init__.initscr -> _abcoll.get
+
+*** /usr/local/lib/python3.1/curses/wrapper.py ***
+  --> /home/nate/Code/realapps/vee/src/api/__init__.py
+    wrapper.wrapper -> __init__.initialize
+  --> /usr/local/lib/python3.1/curses/__init__.py
+    wrapper.wrapper -> __init__.initscr
+    wrapper.wrapper -> __init__.start_color
+
+*** /usr/local/lib/python3.1/dis.py ***
+  --> /usr/local/lib/python3.1/opcode.py
+    dis.<module> -> opcode.<module>
+
+*** /usr/local/lib/python3.1/inspect.py ***
+  --> /usr/local/lib/python3.1/collections.py
+    inspect.<module> -> collections.namedtuple
+  --> /usr/local/lib/python3.1/dis.py
+    inspect.<module> -> dis.<module>
+    inspect.<module> -> inspect.BlockFinder
+    inspect.<module> -> inspect.EndOfBlock
+    inspect._getfullargs -> inspect.iscode
+    inspect.getargspec -> inspect.getfullargspec
+  --> <string>
+    inspect.getargspec -> <string>.__new__
+    inspect.getfullargspec -> inspect._getfullargs
+    inspect.getfullargspec -> inspect.isfunction
+    inspect.getfullargspec -> inspect.ismethod
+    inspect.getfullargspec -> <string>.__new__
+
+*** /usr/local/lib/python3.1/opcode.py ***
+    opcode.<module> -> opcode.def_op
+    opcode.<module> -> opcode.jabs_op
+    opcode.<module> -> opcode.jrel_op
+    opcode.<module> -> opcode.name_op
+    opcode.jabs_op -> opcode.def_op
+    opcode.jrel_op -> opcode.def_op
+    opcode.name_op -> opcode.def_op
+
+*** /usr/local/lib/python3.1/os.py ***
+    os.__getitem__ -> os.<lambda>
+
+*** /usr/local/lib/python3.1/re.py ***
+  --> /usr/local/lib/python3.1/sre_compile.py
+    re._compile -> sre_compile.compile
+    re._compile -> sre_compile.isstring
+    re.compile -> re._compile
+
+*** /usr/local/lib/python3.1/sre_compile.py ***
+    sre_compile._code -> sre_compile._compile
+    sre_compile._code -> sre_compile._compile_info
+    sre_compile._compile -> sre_compile._compile
+    sre_compile._compile -> sre_compile._compile_charset
+    sre_compile._compile -> sre_compile._simple
+  --> /usr/local/lib/python3.1/sre_parse.py
+    sre_compile._compile -> sre_parse.__getitem__
+    sre_compile._compile_charset -> sre_compile._optimize_charset
+    sre_compile._compile_info -> sre_parse.getwidth
+    sre_compile._optimize_charset -> sre_compile._identityfunction
+    sre_compile._optimize_charset -> sre_compile._mk_bitmap
+    sre_compile._simple -> sre_parse.__getitem__
+    sre_compile._simple -> sre_parse.getwidth
+    sre_compile.compile -> sre_compile._code
+    sre_compile.compile -> sre_compile.isstring
+    sre_compile.compile -> sre_parse.parse
+
+*** /usr/local/lib/python3.1/sre_parse.py ***
+    sre_parse.__getitem__ -> sre_parse.__init__
+    sre_parse.__init__ -> sre_parse.__next
+    sre_parse._parse -> sre_parse.__getitem__
+    sre_parse._parse -> sre_parse.__init__
+    sre_parse._parse -> sre_parse.__len__
+    sre_parse._parse -> sre_parse.__setitem__
+    sre_parse._parse -> sre_parse.append
+    sre_parse._parse -> sre_parse.get
+    sre_parse._parse -> sre_parse.match
+    sre_parse._parse_sub -> sre_parse._parse
+    sre_parse._parse_sub -> sre_parse.match
+    sre_parse.get -> sre_parse.__next
+    sre_parse.getwidth -> sre_parse.getwidth
+    sre_parse.match -> sre_parse.__next
+    sre_parse.parse -> sre_parse.__init__
+    sre_parse.parse -> sre_parse._parse_sub
+    sre_parse.parse -> sre_parse.fix_flags
+    sre_parse.parse -> sre_parse.get
+
+*** /usr/local/lib/python3.1/trace.py ***
+  --> /usr/local/lib/python3.1/threading.py
+    trace.run -> threading.settrace
+  --> <string>
+    trace.run -> <string>.<module>
+
+*** /usr/local/lib/python3.1/weakref.py ***
+    weakref.__init__ -> weakref.update
+
+*** <string> ***
+  --> ./main.py
+    <string>.<module> -> main.main
+    <string>.<module> -> <string>.ArgInfo
+    <string>.<module> -> <string>.ArgSpec
+    <string>.<module> -> <string>.Arguments
+    <string>.<module> -> <string>.Attribute
+    <string>.<module> -> <string>.FullArgSpec
+    <string>.<module> -> <string>.ModuleInfo
+    <string>.<module> -> <string>.Traceback

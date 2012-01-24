@@ -1,0 +1,6 @@
+*.pyc
+*.swp
+*.swo
+.sass-cache*
+local/
+media/css/

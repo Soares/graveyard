@@ -1,0 +1,62 @@
+Prioritized List:
+	* find a way to not have to use 'global screen'
+		- you probably need to pass some shit to hline/vline/Line
+	* make root.api use shapes?
+		- move shapes to utilities
+	* make all colors be taken from config (root/canvas bg)
+		- actually, screw that, make an abstraction over colors
+	* implement api.compatability's unicode to use the fallback if necessary
+	* allow windows.modules.tab boxes to have corners
+	* see if you can't simplify the space/room/excess/inner/position/bounds/minimums/maximums bullshit
+	* make sure that refresh isn't being called too often
+		- it looks like it could be expensive given windows.modules.tab
+	* constrain the cursor to the inner rectangle of Window nodes
+		- you need some way to have different min sizes for selected nodes
+		- we should allow windows to bezero-height inner so long as they are not selected
+		- this means that attempting to select a new window will now be able to throw NotEnoughSpace
+	* make a real decision about the parameters to NotEnoughSpace
+		- either translate all exceptions or remove all translations
+	* handle application resize
+	* windows.api could use a light refactor, maybe some window → node
+	* modules.boxtabs.Bits could be smarter about __iter__
+
+
+Roadmap:
+	* implement window rotation
+	* implement window swapping
+	* beef up the modes
+		- add real commands for window manipulation
+		- add command-mode
+
+
+Discussions:
+	* should items in configs be functions?
+		- this applies especially to the tab module
+	* re-think what should be in the core
+	* is it possible to make signals any dryer?
+		- potentially remove all of those _methods?
+	* do you want one Vee-level exception?
+		- make sure to propagate curses exceptions this way
+	* Should we really draw Lines directly on the screen?
+		- Conversly, should we really make a new window for each hline/vline?
+
+
+Concerns:
+	* maxing horizontals seems a bit slow. Profile, perhaps?
+	* make sure that window managers with one child are handled by the windows.close function
+		- I think they are, but no guarantees
+	* order is still inefficient, *tuple(pair) forces evaluation
+
+
+Future concerns:
+	* shift_cursor is inconsistant in that it flips the y axis
+	* ensure that take_cursor sends cursor_moved signals when necessary
+		- ensure that resize sends cursor_moved signals too
+
+
+Potential Optimizaions:
+	* cache window x, y, w, h until you know you change (with shift/scale//move/resize//insert/etc)
+
+
+Limitations:
+	* hline/vline can't handle non-ascii

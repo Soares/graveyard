@@ -1,0 +1,32 @@
+###################################
+# TODO
+
+
+###########################
+## Known Bugs:
+
+###########################
+## Feature Requests:
+
+- fix the nested error propogation
+- make indents be tab/space aware
+- move functions/elements?
+- it would be nice if breaks within attrlits / paramlists were indented
+    ^links+
+        %style('detail'){in='auctions'}
+        %style('visualize'){in='jquery'}
+        %script('detail'){in='auctions'}
+        
+    ^content ← it would be nice if this didn't indent
+
+###########################
+## Things to Test:
+
+- test whether or not sections are evaluated twice in extensions
+- test %default(...)
+- test the scope of %set() variables
+- can getattr only result in AttributeError?
+-checkbox:checked ← test in multiple doctypes
+
+###########################
+## Notes

@@ -13,4 +13,7 @@ able to learn a thing or two from it. And because it might be hilarious
 for me to come back and poke around later.
 
 But be warned: beyond this point lie ghosts of the past, half-alive all
-dead, abandoned for want of maintenance.
+dead, abandoned for want of maintenance. They were all alive once, but now
+their guts hang out all over the place.
+
+(i.e. ".git" has been moved to "git")

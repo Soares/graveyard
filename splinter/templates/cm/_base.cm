@@ -1,0 +1,13 @@
+%doctype
+%load('utils')
+-html
+	-head
+		%encoding
+		%favicon
+		-title *title[]
+		*links
+			%style('base')
+			%style('theme'){in='jquery/ui'}
+			%script('utilities')
+	-body
+		*content[]

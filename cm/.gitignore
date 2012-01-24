@@ -1,0 +1,13 @@
+*.pyc
+*.swo
+*.swp
+cm/parser/output/parsetab.py
+cm/parser/output/parser.out
+cm/lexer/output/lextab.py
+examples/input/*
+examples/output/*
+build/
+cm/haml/
+!cm/haml/__init__.py
+setup
+move

@@ -1,0 +1,6 @@
+*.pyc
+.*.sw*
+restricted/
+transquation/.generated_media/
+transquation/_generated_media_names.py
+transquation/static/closure/
