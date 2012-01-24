@@ -1,0 +1,36 @@
+## RIM Java Development Environment
+# RIM Project file
+[AlxImports
+]
+AlwaysBuild=0
+[DependsOn
+]
+Description=RidePedia
+[Files
+resources\icon.png
+src\com\ridepedia\main\AcceptScreen.java
+src\com\ridepedia\main\FullVerticalFieldManager.java
+src\com\ridepedia\main\MapScreen.java
+src\com\ridepedia\main\Ridepedia.java
+src\com\ridepedia\main\WebImageField.java
+src\com\ridepedia\main\WebRunner.java
+src\com\ridepedia\main\WelcomeScreen.java
+]
+[Icons
+resources\icon.png
+]
+HaveImports=0
+HaveAlxImports=0
+[Imports
+]
+MidletClass=
+Options=-quiet
+OutputFileName=ridepedia
+RibbonPosition=0
+RunOnStartup=0
+StartupTier=7
+SystemModule=0
+Title=RidePedia
+Type=0
+Vendor=ridepedia
+Version=0.1

@@ -1,0 +1,10 @@
+MIDlet-Name: ridepedia
+MIDlet-Version: 0.1
+MIDlet-Vendor: ridepedia
+MIDlet-Description: RidePedia
+MIDlet-Jar-URL: ridepedia.jar
+MIDlet-Jar-Size: 0
+MicroEdition-Profile: MIDP-2.0
+MicroEdition-Configuration: CLDC-1.1
+MIDlet-1: RidePedia,resources/icon.png,
+RIM-MIDlet-Flags-1: 0

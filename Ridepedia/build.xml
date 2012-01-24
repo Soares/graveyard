@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Ridepedia" default="buildRIM" basedir=".">
+	<taskdef name="rim" classname="com.etaras.anttask.rapc.RAPC" classpath="lib/anttask-rapc-1.8.jar" />
+	<property name="jdehome" value="C:\Program Files (x86)\Research In Motion\BlackBerry JDE 6.0.0" />
+	<property name="javahome" value="C:\Program Files (x86)\Java\jdk1.6.0_24">
+	</property>
+	<property name="simulator" value="${jdehome}\simulator" />
+	<property name="bin" value="${jdehome}\bin" />
+	<target name="debug" depends="buildRIM">
+		<copy todir="${simulator}" overwrite="true">
+			<fileset dir=".">
+				<include name="*.cod" />
+				<include name="*.debug" />
+				<include name="*.csl" />
+				<include name="*.cso" />
+			</fileset>
+		</copy>
+		<exec executable="cmd.exe" dir="${bin}" spawn="true">
+			<arg value="/c" />
+			<arg value="jdwp.bat" />
+		</exec>
+	</target>
+	<target name="simulate" depends="deploy">
+		<exec executable="cmd.exe" dir="${simulator}" spawn="true">
+			<arg value="/c" />
+			<arg value="9800.bat" />
+		</exec>
+	</target>
+	<target name="deploy" depends="buildRIM">
+		<copy todir="${simulator}" overwrite="true">
+			<fileset dir=".">
+				<include name="*.cod" />
+				<include name="*.debug" />
+				<include name="*.csl" />
+				<include name="*.cso" />
+			</fileset>
+		</copy>
+	</target>
+	<target name="buildRIM" description="Composes RIM">
+		<rim jdehome="${jdehome}" javahome="${javahome}">
+			<workspace src="ridepedia.jdw" build="true" update="true">
+				<cldc src="ridepedia.jdp" title="RidePedia" vendor="ridepedia" version="0.1" description="RidePedia" arguments="" systemmodule="false" runonstartup="false" startuptier="7" ribbonposition="0" output="ridepedia" options="-quiet" update="true">
+					<files dir=".">
+						<include name="**/*.java" />
+						<include name="resources/**/*.*" />
+					</files>
+					<icons dir=".">
+						<include name="resources/**/*.png" />
+						<include name="resources/**/*.gif" />
+					</icons>
+				</cldc>
+			</workspace>
+		</rim>
+	</target>
+</project>

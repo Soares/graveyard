@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+RIM-COD-Module-Name: ridepedia
+RIM-COD-Module-Dependencies: net_rim_cldc,net_rim_locationapi,net_rim_bb_maps_api
+MIDlet-Jar-Size: 22732
+MIDlet-1: RidePedia,resources/favicon.png,
+RIM-COD-Creation-Time: 1302816112
+MIDlet-Jar-URL: ridepedia.jar
+RIM-COD-URL: ridepedia.cod
+RIM-COD-SHA1: c8 aa f8 d7 13 61 ec a9 0b 5d 54 8c 15 26 e0 c6 8f ad 28 79
+RIM-COD-Size: 14080
+MicroEdition-Configuration: CLDC-1.1
+MIDlet-Version: 0.1
+MIDlet-Name: ridepedia
+MIDlet-Description: RidePedia
+MIDlet-Vendor: ridepedia
+MicroEdition-Profile: MIDP-2.0
+RIM-MIDlet-Flags-1: 0
