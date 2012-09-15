@@ -1,0 +1,5 @@
+# pack-refs with: peeled 
+608c5254856f2fbfe36fadfcde8f4e35fbf5daf1 refs/remotes/origin/mac
+77cbb16a5224203edbe1de4f5e6b06c3054e221f refs/remotes/origin/master
+0cc0915bf83c1915575182d1287abfc6dd3e6f3c refs/remotes/origin/nel-fix-title-bar
+59bfd87e08c127e6aacf473e99d2ebbc20e633ff refs/remotes/origin/plugins
