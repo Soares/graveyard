@@ -1,0 +1,53 @@
+[app] (name=fbrun)
+  [Position]	(CENTER)	{0 0}
+  [Layer]	{2}
+[end]
+[app] (name=apvlv) (class=Apvlv)
+  [Position]	(UPPERLEFT)	{0 0}
+  [Maximized]	{yes}
+  [Fullscreen]	{no}
+[end]
+[app] (name=evince) (class=Evince)
+  [Workspace]	{1}
+  [Position]	(UPPERLEFT)	{0 0}
+  [Deco]	{NORMAL}
+  [Maximized]	{yes}
+[end]
+[app] (name=VCLSalFrame) (class=libreoffice-writer)
+  [Deco]	{NORMAL}
+  [Maximized]	{yes}
+[end]
+[app] (name=VCLSalFrame.DocumentWindow) (class=libreoffice-startcenter)
+  [Deco]	{NONE}
+  [Maximized]	{yes}
+[end]
+[app] (name=gimp) (class=Gimp) (role=gimp-image-window)
+  [Workspace]	{3}
+  [Dimensions]	{976 763}
+  [Position]	(UPPERLEFT)	{166 0}
+[end]
+[app] (name=gimp) (class=Gimp) (role=gimp-dock)
+  [Workspace]	{3}
+  [Dimensions]	{210 846}
+  [Position]	(UPPERLEFT)	{1150 0}
+[end]
+[app] (name=gimp) (class=Gimp) (role=gimp-toolbox)
+  [Workspace]	{3}
+  [Dimensions]	{160 849}
+  [Position]	(UPPERLEFT)	{0 0}
+[end]
+[app] (name=urxvt) (class=URxvt)
+  [Position]	(UPPERLEFT)	{0 0}
+  [Deco]        {NONE}
+  [Sticky]	{yes}
+  [Maximized]	{yes}
+[end]
+[app] (name=chromium) (class=Chromium)
+  [Deco]	{NONE}
+  [Maximized]	{yes}
+[end]
+[app] (name=Navigator) (class=Firefox) (role=browser)
+  [Deco]	{NONE}
+  [Maximized]	{yes}
+[end]
+

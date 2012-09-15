@@ -1,0 +1,35 @@
+
+[Print Settings]
+cover-after=none
+print-at=now
+evince-print-setting-page-size=false
+print-at-time=
+cups-StpiShrinkOutput=Shrink
+cups-StpSaturation=None
+cups-job-sheets=none,none
+cups-StpQuality=Standard
+cups-ColorModel=RGB
+cups-StpFullBleed=False
+cups-MediaType=Plain
+cups-StpImageType=TextGraphics
+cups-job-priority=50
+evince-print-setting-page-scale=1
+media-type=Plain
+cups-StpContrast=None
+evince-print-setting-page-autorotate=true
+cups-StpColorCorrection=None
+cups-StpBrightness=None
+cover-before=none
+cups-number-up=1
+printer=EPSON-Epson-Stylus-NX620
+
+[Page Setup]
+PPDName=Letter
+DisplayName=US Letter
+Width=215.89999389648438
+Height=279.39999389648438
+MarginTop=6.3499999999999996
+MarginBottom=14.224
+MarginLeft=6.3499999999999996
+MarginRight=6.3499999999999996
+Orientation=portrait

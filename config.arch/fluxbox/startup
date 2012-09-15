@@ -1,0 +1,31 @@
+#!/bin/zsh
+
+# Caps lock is escape
+xmodmap $XDG_CONFIG_HOME/X11/modmap
+
+# Inverted scrolling
+xinput set-button-map 10 1 2 3 5 4 6 7 8 9 10 11 12
+
+# Don't mouse when I'm typing
+syndaemon -i 0.2 -k -d &
+
+# Set the background
+$HOME/.local/sbin/fehbg
+
+# Terminal resources (Solarized)
+# TODO: These three lines should be based on one variable
+local $TERMINAL_THEME=`cat $XDG_CACHE_DIR/terminal_theme >/dev/null 2>/dev/null`
+if [[ $TERMINAL_THEME=="Solarized Light" ]]; then
+	echo "Solarized Light" > $XDG_CACHE_DIR/terminal_theme
+	eval `dircolors $XDG_CONFIG_HOME/dircolors/ansi-light`
+	xrdb -DSOLARIZED_LIGHT -merge $XDG_CONFIG_HOME/X11/resources &
+else
+	echo "Solarized Dark" > $XDG_CACHE_DIR/terminal_theme
+	eval `dircolors $XDG_CONFIG_HOME/dircolors/ansi-dark`
+	xrdb -merge $XDG_CONFIG_HOME/X11/resources &
+fi
+
+# Transparency compositing
+xcompmgr -c &
+
+exec fluxbox -log "$XDG_CONFIG_HOME/fluxbox/log"

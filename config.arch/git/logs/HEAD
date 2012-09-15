@@ -1,0 +1,2 @@
+0000000000000000000000000000000000000000 5bfde3037ea0e182afed9bb9b8c0550b25476396 Nate Soares <nate@so8r.es> 1347746214 -0700	clone: from git@github.com:Soares/config
+5bfde3037ea0e182afed9bb9b8c0550b25476396 b9dc2ec08d9146c90ef498ef67f4aea0273b8640 Nate Soares <nate@so8r.es> 1347746507 -0700	commit: spliting repo, this half has the history with the configs we don't actually want to save

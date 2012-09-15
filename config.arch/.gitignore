@@ -1,0 +1,10 @@
+chromium/
+gnupg/
+gnupg
+google-googletalkplugin
+transmission
+transmission-daemon
+Trolltech.conf
+.libreoffice
+cabal/packages
+mpd/mpd.log
