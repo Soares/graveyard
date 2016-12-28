@@ -1,0 +1,5 @@
+You'll need to set the following settings:
+
+SASS_DIR - the root directory for your sass files
+SASS_DEST - the destination directory for compiled sass files
+SASS_EXE - the executable that converts sass files
