@@ -1,0 +1,106 @@
+@import utility/sass/colors
+
+body
+  background: #ccc
+
+#main
+  padding: 0
+    bottom: 2em
+  margin: 0
+  font-size: 1em
+  background: transparent
+
+.ui-widget
+  font-size: .9em
+
+#left, #center
+  .ui-button.ui-button-icon-only
+    padding: 7px 2px
+    margin: 0
+
+$leftwidth: 220px
+$leftpad: 15px
+$rightwidth: 200px
+$rightpad: 10px
+
+#control
+  box-sizing: border-box
+  overflow: auto
+  text-align: center
+  padding-top: 8px
+  padding-bottom: 8px
+  padding-left: $leftpad
+  padding-right: $rightpad
+  position: relative
+  z-index: 5
+
+  input
+    padding: 3px
+    border: 0
+    font-family: 'minion-pro-1', 'minion-pro-2', Palatino, Georgia, 'Times New Roman', serif
+    background: transparent
+    width: $leftwidth - (2 * $leftpad)
+    font-size: 150%
+    margin: 0
+      bottom: 12px
+
+    &:focus
+      background-color: rgba(255, 255, 255, .7)
+
+  input.left
+    float: left
+    width: 60%
+
+  input.right
+    float: right
+    width: 30%
+    text-align: right
+
+#right
+  box-sizing: border-box
+  position: absolute
+  right: 0
+  width: $rightwidth
+  margin: 0
+  padding: 0 $rightpad
+
+  ul
+    margin: 0
+    padding: 0
+
+  #tabs
+    margin-bottom: 9px
+
+  li
+    padding: 0
+    margin: 0
+    list-style: none
+  
+  button
+    box-sizing: border-box
+    width: $rightwidth - (2 * $rightpad)
+    &[disabled]
+      cursor: default
+
+  #state button[disabled]
+    opacity: .4
+
+#left
+  box-sizing: border-box
+  position: absolute
+  width: $leftwidth
+  text-align: left
+  padding: 0 $leftpad
+
+#center
+  box-sizing: border-box
+  margin-left: $leftwidth
+  margin-right: $rightwidth
+  background: white
+  overflow: auto
+  min-height: 400px
+  border-radius: 3px
+  min-width: 500px
+
+  > div
+    display: none

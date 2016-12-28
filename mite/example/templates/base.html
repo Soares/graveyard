@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+	<head>
+		<title>{{ title }}</title>
+		{% for style in styles %}
+		<link rel="stylesheet" type="text/css" href="{{ style }}">
+		{% endfor %}
+	</head>
+	<body>
+		{% block main %}
+		{% endblock %}
+
+		{% for script in scripts %}
+		<script tpe="text/js" src="{{ script }}"></script>
+		{% endfor %}
+	</body>
+</html>
+

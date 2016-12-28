@@ -1,0 +1,41 @@
+#!/usr/bin/env python3
+"""Command line interface to mite."""
+import os
+import sys
+
+import mite
+import mite.action.clean
+import mite.action.build
+import mite.action.serve
+import mite.action.push
+
+
+def die(*args, **kwargs):
+	status = kwargs.pop('status', 1)
+	print(*args, file=sys.stderr, **kwargs)
+	sys.exit(status)
+
+if __name__ != "__main__":
+	die('This script should be run from the command line.')
+prog = os.path.basename(sys.argv[0])
+
+ACTION_MAP = {a.KEYWORD: a.Action for a in {
+	mite.action.clean,
+	mite.action.build,
+	mite.action.serve,
+	mite.action.push}}
+if len(sys.argv) == 2 and sys.argv[1] in ('-h', '--help'):
+	print('usage: {} <command> [<args>]'.format(prog))
+	print('Available commands:')
+	for keyword in ACTION_MAP:
+		print('\t{}'.format(keyword))
+	print('See {} <command> -h for more details.'.format(prog))
+	sys.exit(0)
+if len(sys.argv) == 1 or sys.argv[1] not in ACTION_MAP:
+	die('usage: {} ( {} ) [...]'.format(prog, ' | '.join(ACTION_MAP)))
+try:
+	ACTION_MAP[sys.argv[1]](prog, *sys.argv[1:]).execute()
+except mite.NotCurrentlyPossible as error:
+	die(prog, "can't do that right now.\n", error)
+except mite.Misconfigured as error:
+	die('Misconfigured:', error)

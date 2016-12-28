@@ -1,0 +1,76 @@
+{% verbatim %}
+<script id="tmpl-quality" type="text/x-jquery-tmpl">
+    <div class="quality">
+        <button class="open"></button>
+        <span class="name">${name}</span>
+        <div class="options">
+            {{if unique}}<span class="unique">${unique}</span>{{/if}}
+            {{if weapon}}<span class="weapon">${weapon}</span>{{/if}}
+            {{if ability}}<span class="ability">${ability}</span>{{/if}}
+            {{if specailty}}<span class="specialty">${specialty}</span>{{/if}}
+        </div>
+        <button class="remove"></button>
+        <span class="source">${source}</span>
+    </div>
+</script>
+
+<script id="tmpl-quality-passed" type="text/x-jquery-tmpl">
+    <div class="requirement ui-state-hover">
+        <span class="message">${message}</span>
+        <span class="ui-icon ui-icon-circle-check"></span>
+    </div>
+</script>
+
+<script id="tmpl-quality-failed" type="text/x-jquery-tmpl">
+    <div class="requirement ui-state-hover">
+        <span class="message">${message}</span>
+        <span class="ui-icon ui-icon-circle-close"></span>
+    </div>
+</script>
+
+<script id="tmpl-quality-reference" type="text/x-jquery-tmpl">
+    <div class="quality header {{if similar}}posessed{{/if}}" title="${brief}">
+        <span class="name">${name.decamel()}</span>
+        <span class="similar"></span>
+        {{if type}}<span class="category">${type}</span>{{/if}}
+    </div>
+    <div class="quality content">
+        {{if requirements}}
+        <div class="requirements">
+            <div class="failed"></div>
+            <div class="passed"></div>
+        </div>
+        {{/if}}
+        <div class="description">${description}</div>
+        <div class="inputs">
+            <div class="options">
+                {{if unique}}
+                <input name="unique" placeholder="${unique}">
+                {{/if}}
+                {{if weapons}}
+                <select name="weapons">
+                    {{each(i, weapon) weapons}}
+                    <option value="${weapon.id}">${weapon}</option>
+                    {{/each}}
+                </select>
+                {{/if}}
+                {{if abilities}}
+                <select name="ability">
+                    {{each(i, ability) abilities}}
+                    <option value="${ability}">${ability}</option>
+                    {{/each}}
+                </select>
+                {{/if}}
+                {{if specialties}}
+                <select name="specialties">
+                    {{each(i, specialty) specialties}}
+                    <option value="${specialty}">${specialty}</option>
+                    {{/each}}
+                </select>
+                {{/if}}
+            </div>
+            <button class="select">Select</button>
+        </div>
+    </div>
+</script>
+{% endverbatim %}

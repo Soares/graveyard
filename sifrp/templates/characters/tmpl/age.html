@@ -1,0 +1,54 @@
+<script id="tmpl-age-reference" type="text/x-jquery-tmpl">
+    {% verbatim %}
+    <div class="age header">
+        <span class="name">${name}</span>
+        <div class="range">
+            <span class="min">${min}</span>
+            <span class="dash">-</span>
+            <span class="max">{{if max}}${max}{{/if}}</span>
+        </div>
+    </div>
+    <div class="age content">
+        <div class="row">
+            <label>Ability experience</label>
+            <div class="data">${experience}</div>
+        </div>
+        <div class="row">
+            <label>Specialty experience</label>
+            <div class="data">${specialty}</div>
+        </div>
+        <div class="row">
+            <label>Destiny points</label>
+            <div class="data">${destiny}</div>
+        </div>
+        <div class="row">
+            <label>Skill maximum</label>
+            <div class="data">${skillCap}</div>
+        </div>
+        <div class="row">
+            <label>Drawbacks</label>
+            <div class="data">
+                {{if drawback == false}}{{if flaws == 0}}
+                <span class="none">None</span>
+                {{/if}}{{/if}}
+                {{if drawback}}
+                <span class="drawback">Any one drawback</span>
+                {{/if}}
+                {{if flaws}}
+                <div class="flaw">
+                    <div class="explain">A flaw for any ${num} of the following abilities:</div>
+                    {{each(i, ability) flawed}}
+                    <span class="ability">${ability}</span>
+                    {{/each}}
+                </div>
+                {{/if}}
+            </div>
+        </div>
+        <div class="input">
+            {{if max}}<div class="slider"></div>{{/if}}
+            <input name="choice" type="number" min="${min}" {{if max}}max="${max}"{{/if}}>
+            <button class="select">select</button>
+        </div>
+    </div>
+    {% endverbatim %}
+</script>

@@ -1,0 +1,8 @@
+site:
+    compiler: kramer
+root: copy to .
+main: .
+coffee: js
+stylus: css
+images: copy to images
+posts: true

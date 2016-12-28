@@ -1,0 +1,7 @@
+{% extends "core.html" %}
+{% load media %}
+
+{% block style %}
+{{ block.super }}
+{% include_media "base.css" %}
+{% endblock %}

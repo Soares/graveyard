@@ -1,0 +1,9 @@
+<script id="tmpl-log" type="text/x-jquery-tmpl">
+    {% verbatim %}
+    <div class="${type.slugify()} log">
+        <span class="action">${action}</span>
+        <button class="remove"></button>
+        <input class="comment" value="${comment}" placeholder="comment">
+    </div>
+    {% endverbatim %}
+</script>

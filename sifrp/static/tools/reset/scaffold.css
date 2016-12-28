@@ -1,0 +1,371 @@
+/*
+ * Scaffolding
+ *
+ * This CSS file is meant to be a portable comapnion to a reset stylesheet.
+ * Drop this onto any new site after the reset, and you have a nice cross-
+ * browser implementation of all default types of HTML tags, along with a
+ * tidy library of utility classes and IDs as a baseline for any theme.
+ *
+ * Thus, at the end of the development cycle before minifying and condensing,
+ * you should have:
+ *		- reset.css
+ *		- scaffold.css (this)
+ *		- base_theme.css (a nice default website layout)
+ *		- [site_name].css (all site-specific changes)
+ *
+ * General CSS rule declarations are as follows:
+ *		1. zindex &| display &| visibility &| floats
+ * 		2. size
+ *		3. position &| top/left/right/bottom
+ *		4. margin &| padding
+ *		5. borders
+ *		6. backgrounds
+ *		7. font & text
+ *
+ * Table of Contents:
+ *      1. Header
+ *      2. Page Structure
+ *      3. Headings
+ *      4. Text Styles
+ *      5. Navigation
+ *      6. Tables
+ *      7. Forms
+ *      8. Utilities
+ *      9. Browser Hacks
+ *      10. Print
+ *      11. Mobile
+ *      12. TV
+ *
+ * Colors:
+ *      Grey: #CCC
+ */
+
+
+/* -----------------------------------
+  			    Header
+ ----------------------------------- */
+
+
+/* -----------------------------------
+  			Page Structure
+ ----------------------------------- */
+ 
+html {
+	width: 100%;
+	-webkit-font-smoothing: antialiased;
+}
+
+body {
+	height: 100%;
+	margin: 0;
+	background-color: #FFF;
+    font-family: 'minion-pro-1', 'minion-pro-2', Palatino, Georgia, 'Times New Roman', serif;
+	font-size: 100%;
+	line-height: 1.6;
+	color: #222;
+}
+
+body article img {
+    margin: 0 1em 1em 0;
+    border: 5px solid #EEE;
+}
+
+img, object {
+    max-width: 100%;
+}
+
+
+/* -----------------------------------
+  			   Headings
+ ----------------------------------- */
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 1em 0 0.5em;
+	font-weight: bold;
+	text-rendering: optimizeLegibility;
+}
+
+h1 { margin-top: 0.2em; font-size: 2em; }
+h2 { font-size: 1.8em; }
+h3 { font-size: 1.6em; }
+h4 { font-size: 1.4em; }
+h5 { font-size: 1.25em; }
+h6 { font-size: 1.1em; }
+
+
+/* -----------------------------------
+  			  Text Styles
+ ----------------------------------- */
+
+p { 
+    margin-bottom: 0.8em;
+}
+
+pre, code, kbd, samp, tt, var {
+	font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif;
+}
+
+a { color: #607890; }
+a:hover, a:active { outline: none; }
+
+small { font-size: 85%; }
+strong, th { font-weight: bold }
+
+sub { vertical-align: sub; font-size: smaller; }
+sup { vertical-align: super; font-size: smaller; }
+
+caption { font-style: italic; }
+
+q:before, q:after {
+	content: '"';
+}
+
+abbr, time {
+	border-bottom: 1px dotted #999;
+	cursor: help; 
+}
+
+dl { padding: 1em; }
+dt { font-weight: bold; }
+dd { margin-bottom: 1em; }
+
+ul, ol {
+    margin: 0 0 0.8em 1.5em;
+}
+
+ul { list-style-type: disc; }
+ol { list-style-type: decimal; }
+
+nav ul { margin: 0; }
+
+/*
+ * Prevent horizontal scrollbars in pre blocks
+ * 
+ * http://www.pathf.com/blogs/2008/05/formatting-quoted-code-in-blog-posts-css21-white-space-pre-wrap/
+ */
+pre {
+	white-space: pre; /* CSS2 */
+	white-space: -moz-pre-wrap; /* Mozilla */
+	white-space: -hp-pre-wrap; /* HP printers */
+	white-space: -o-pre-wrap; /* Opera 7 */
+	white-space: -pre-wrap; /* Opera 4-6 */
+	white-space: pre-wrap; /* CSS 2.1 */
+	/* Causes Webkit browsers to totally trash whitespace */
+	/* white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
+	word-wrap: break-word; /* IE */
+}
+
+/* TODO: <code> snippets that are longer than the containing div are cut-off */
+code, var, .codehilite {
+    padding: 0 4px;
+    background-color: #FAFAFA;
+    border: 1px solid #CACACA;
+    -o-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    font-style: normal;
+}
+
+pre code {
+    background-color: transparent;
+    border: none;
+    -o-border-radius: none;
+    -moz-border-radius: none;
+    -webkit-border-radius: none;
+    border-radius: none;
+}
+
+blockquote {
+    float: right;
+    width: 250px;
+    margin: 10px 0;
+    padding: 20px 20px 10px 30px;
+    border-top: 1px solid #CCC;
+    border-bottom: 1px solid #CCC;
+    background: transparent url(img/open-quote.png) no-repeat 0 0;
+    font-style: italic;
+    font-size: 1.1em;
+}
+
+/* 
+ * These selection declarations have to be separate.
+ * No text-shadow: twitter.com/miketaylr/status/12228805301 
+ */
+::-moz-selection { background: #3399ff; color:#fff; text-shadow: none; }
+::selection { background: #3399ff; color:#fff; text-shadow: none; } 
+
+/* http://forrst.com/posts/Gradient_Horizontal_Rules-yZ4 */
+hr.fancy {
+	background: #DDD;
+	background: -moz-linear-gradient(left center, rgb(255,255,255) 0%, rgb(187, 187, 187) 25%, rgb(187, 187, 187) 75%, rgb(255,255,255) 100%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(0, rgb(255,255,255)), color-stop(0.25, rgb(187, 187, 187)), color-stop(0.75, rgb(187, 187, 187)), color-stop(1, rgb(255,255,255)));
+	border: 0;
+	height: 1px; 
+}
+
+
+/* -----------------------------------
+  			  Navigation
+ ----------------------------------- */
+
+
+/* -----------------------------------
+  			    Tables
+ ----------------------------------- */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-size: inherit;
+}
+
+th, tfoot th, tfoot td { font-weight: bold; }
+
+th, td {
+	padding: 2px 6px;
+}
+
+thead th, thead td, tfoot th, tfoot td { text-align: center; }
+
+td, td img { vertical-align:top; text-align: left; }
+
+
+/* -----------------------------------
+  			    Forms
+ ----------------------------------- */
+
+/*
+ * www.sitepoint.com/blogs/2010/08/20/ie-remove-textarea-scrollbars/
+ */
+textarea { overflow: auto; }
+
+fieldset {
+	display: inline-block;
+	padding: 5px 10px 10px;
+	border: 1px solid #ccc;
+}
+
+legend {
+	display: block;
+	padding: 0 0.5em;
+    font-weight: bold;
+}
+
+/* 
+ * align checkboxes, radios, text inputs, etc with their label
+ * 
+ * tjkdesign.com/ez-css/css/base.css
+ */
+input[type="radio"] { vertical-align: text-bottom; }
+input[type="checkbox"] { vertical-align: bottom; }
+input[type="button"], input[type="submit"] { vertical-align: baseline; }
+button { vertical-align: baseline; }
+
+/* hand cursor on clickable input elements */
+label, input[type=button], input[type=submit], button { cursor: pointer; }
+
+input[type="text"], input[type="email"], input[type="password"], textarea {
+    padding: 5px;
+    box-sizing: border-box;
+    border-radius: 2px;
+	border: 1px solid #666;
+}
+
+input[type="text"]:not(:focus):hover, input[type="email"]:not(:focus):hover, input[type="password"]:not(:focus):hover, textarea:not(:focus):hover {
+	border: 1px solid #3c7fb1;
+}
+
+input:invalid, textarea:invalid { 
+    border-radius: 1px;
+    -webkit-box-shadow: 0px 0px 5px red; 
+    -moz-box-shadow: 0px 0px 5px red; 
+    box-shadow: 0px 0px 5px red;
+}
+
+/* -----------------------------------
+              Experimental
+ ------------------------------------- */
+::-webkit-validation-bubble-message {
+    padding: 1em;
+    background: none;
+    border: 0;
+    background-color: #ccc;
+}
+::-webkit-validation-bubble-arrow {
+    background: none;
+    background-color: #ccc;
+}
+
+
+/* -----------------------------------
+  			 Browser Hacks
+ ----------------------------------- */
+
+/* Better Image Scaling for IE7+ */
+.ie img {
+	-ms-interpolation-mode: bicubic;
+}
+
+.ie .mod { zoom: 1; }
+
+.ie6 input { vertical-align: text-bottom; }
+.ie8 input[type="radio"] { vertical-align: bottom; }
+
+
+/* -----------------------------------
+  			   Printing
+ ----------------------------------- */
+
+@media print {
+	* { background: transparent !important; color: #444 !important; text-shadow: none; }
+	
+	a, a:visited { color: #444 !important; text-decoration: underline; }
+	
+	a:after { content: " (" attr(href) ")"; } 
+	
+	abbr:after { content: " (" attr(title) ")"; }
+	
+	.ir a:after { content: ""; }  /* Don't show links for images */
+	
+	pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+	
+	img { page-break-inside: avoid; }
+	
+	@page { margin: 0.5cm; }
+	
+	p, h2, h3 { orphans: 3; widows: 3; }
+	
+	h2, h3 { page-break-after: avoid; }
+}
+
+
+/* -----------------------------------
+  			    Mobile
+ ----------------------------------- */
+
+@media all and (orientation:portrait) { 
+	/* Style adjustments for portrait mode goes here */
+}
+
+@media all and (orientation:landscape) { 
+	/* Style adjustments for landscape mode goes here */
+}
+
+/* 
+ * Grade-A Mobile Browsers (Opera Mobile, iPhone Safari, Android Chrome)
+ * 
+ * www.cloudfour.com/css-media-query-for-mobile-is-fools-gold/
+ */ 
+@media screen and (max-device-width: 480px) {
+	/* Prevent iOS, WinMobile from adjusting font size */
+	html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; } 
+}
+
+
+/* -----------------------------------
+  			      TV
+ ----------------------------------- */
+
+@media tv {
+}

@@ -1,0 +1,192 @@
+/* Button Styles */
+@mixin button($bg, $color: #cccccc)
+  background: $bg
+  border-color: darken($bg, 20%)
+  color: $color
+
+#abilities
+  padding: 1em
+    bottom: 4em
+  font-size: 1.1em
+
+  div.abilities
+    margin: 1em auto
+    width: 500px
+    overflow: auto
+
+  div.ability
+    box-sizing: border-box
+    overflow: auto
+
+    button
+      box-sizing: border-box
+
+  .left, .right
+    width: 50%
+    box-sizing: border-box
+    div.ability:first-child
+      button.ability, button.opener
+        border-top-width: 3px
+    div.ability:last-child
+      button.ability, button.opener
+        border-bottom-width: 3px
+
+  .left
+    float: left
+    padding-right: 5px
+    div.ability:first-child button.ability
+      border-top-left-radius: 10px
+    div.ability:last-child button.ability
+      border-bottom-left-radius: 10px
+    button.ability, button.specialty, button.opener
+      float: right
+    button.ability
+      border-left-width: 3px
+    button.specialty
+      margin-left: 17px
+    button.opener
+      border-right-width: 3px
+
+  .right
+    float: right
+    padding-left: 5px
+    div.ability:first-child button.ability
+      border-top-right-radius: 10px
+    div.ability:last-child button.ability
+      border-bottom-right-radius: 10px
+    button.ability
+      border-right-width: 3px
+    button.ability, button.specialty, button.opener
+      float: left
+    button.specialty
+      margin-right: 16px
+    button.opener
+      border-left-width: 3px
+
+  .ability .specialties
+    overflow: auto
+    display: none
+
+  .left .ability .specialties
+    float: right
+  .right .ability .specialties
+    float: left
+
+  .ability .specialties.opened
+    display: block
+
+  button.opener, button.ability, button.specialty
+    text-align: center
+    padding: .5em
+    margin: 0
+    height: 36px
+    border-radius: 0
+    background: blue
+    border-style: solid
+    border-width: 1px
+    box-sizing: border-box
+    font-weight: bold
+    font-family: Gill Sans,Arial,sans-serif
+    font-size: 16px
+
+    @include button(#93c3cd, #333)
+
+  .left button.ability
+    border-right-width: 0
+  .right button.ability
+    border-left-width: 0
+
+  button.specialty, button.opener.opened
+    @include button(darken(#93c3cd, 20%), #333)
+
+  button.ability
+    width: 190px
+
+  button.specialty
+    display: block
+    width: 180px
+    padding: .5em
+
+  button.ability, button.specialty
+    input
+      display: none
+
+  button.opener
+    &[disabled]
+      opacity: .5
+      cursor: default
+    &:not([disabled]):hover
+      @include button(#ccd232, #212121)
+    &:not([disabled]):active
+      @include button(#db4865, #ffffff)
+
+#abilities:not(.editing)
+  button.ability
+    &[disabled]
+      opacity: .5
+      cursor: default
+    &:not([disabled]):hover
+      @include button(#ccd232, #212121)
+    &:not([disabled]):active
+      @include button(#db4865, #ffffff)
+
+  button.specialty, button.opener.opened
+    &[disabled]
+      display: none
+    &:not([disabled]):hover
+      @include button(darken(#ccd232, 20%), #212121)
+    &:not([disabled]):active
+      @include button(darken(#db4865, 20%), #ffffff)
+
+#abilities.editing
+  button.ability, button.specialty
+    cursor: default
+    input
+      display: block
+
+  .left
+    button.ability, button.specialty
+      text-align: left
+  .right
+    button.ability, button.specialty
+      text-align: right
+
+  .left button input
+    float: right
+  .right button input
+    float: left
+
+  button input
+    width: 2em
+    display: inline
+    border: 0
+    border-radius: 2px
+    padding: 3px
+    margin-top: 0
+    margin-bottom: 4px
+    opacity: .6
+
+    &:focus
+      opacity: 1
+
+#abilities #languages
+  margin-bottom: 2em
+
+#abilities #ability-mode
+  float: right
+
+#free-roll
+  float: left
+  margin: 0
+  display: none
+
+#experience-pool
+  display: none
+  float: left
+  label
+    margin-left: .1em
+
+#abilities:not(.editing) #free-roll
+  display: block
+#abilities.editing #experience-pool
+  display: block

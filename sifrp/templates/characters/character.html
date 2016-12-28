@@ -1,0 +1,84 @@
+{% extends "full.html" %}
+{% load media %}
+
+{% block style %}
+{{ block.super }}
+{% include_media "character.css" %}
+{% endblock %}
+
+{% block script %}
+{% include "characters/tmpl/age.html" %}
+{% include "characters/tmpl/ability.html" %}
+{% include "characters/tmpl/quality.html" %}
+{% include "characters/tmpl/log.html" %}
+{% include "characters/tmpl/open.html" %}
+{{ block.super }}
+{% include_media "app.js" %}
+{% include_media "westeros.js" %}
+{% include_media "character.js" %}
+{% endblock %}
+
+{% block nav %}
+{% endblock %}
+
+{% block dialogs %}
+{{ block.super }}
+{% include "characters/dialogs/age.html" %}
+{% include "characters/dialogs/glory.html" %}
+{% include "characters/dialogs/destiny.html" %}
+{% include "characters/dialogs/qualities.html" %}
+{% include "characters/dialogs/open.html" %}
+{% include "characters/dialogs/settings.html" %}
+{% endblock %}
+
+{% block main %}
+<div id="menu">
+    <div class="left">
+        <button id="new">New</button>
+        <button id="open">Open</button>
+        <button id="clone">Clone</button>
+        <button id="download">Download</button>
+    </div>
+    <div class="right">
+        <button id="reset">Reset</button>
+        <button id="remove">Clear</button>
+        <button id="settings">Settings</button>
+    </div>
+</div>
+
+{% include "characters/modules/control.html" %}
+
+<div id="left">
+    {% include "characters/modules/house.html" %}
+    {% include "characters/modules/age.html" %}
+    {% include "characters/modules/gender.html" %}
+    {% include "characters/modules/experience.html" %}
+    {% include "characters/modules/glory.html" %}
+    {% include "characters/modules/destiny.html" %}
+    {% include "characters/modules/personality.html" %}
+</div>
+
+<div id="right">
+    <ul id="tabs">
+        <li><button target="#abilities">Abilities</button></li>
+        <!--
+        <li><button target="#qualities">Qualities</button></li>
+        <li><button target="#combat">Combat</button></li>
+        <li><button target="#intrigue">Intrigue</button></li>
+        <li><button target="#posessions">Posessions</button></li>
+        -->
+        <li><button target="#notes">Notes</button></li>
+        <li><button target="#logs">Logs</button></li>
+    </ul>
+</div>
+
+<div id="center">
+    {% include "characters/panes/abilities.html" %}
+    {% include "characters/panes/qualities.html" %}
+    <div id="combat"></div>
+    <div id="intrigue"></div>
+    <div id="posessions"></div>
+    {% include "characters/panes/notes.html" %}
+    {% include "characters/panes/logs.html" %}
+</div>
+{% endblock %}

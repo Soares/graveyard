@@ -1,0 +1,3 @@
+@links = {}
+
+class links.Link

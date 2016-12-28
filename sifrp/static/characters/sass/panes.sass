@@ -1,0 +1,40 @@
+@import utility/sass/colors
+
+#notes
+  .ui-tabs-panel
+    box-sizing: border-box
+    width: 100%
+    height: 500px
+
+#logs
+  height: 500px
+  overflow: auto
+
+  .glory
+    background: rgba(0, 255, 0, .2)
+  .asset
+    background: rgba(255, 255, 0, .2)
+  .debt
+    background: rgba(255, 0, 0, .2)
+  .destiny
+    background: rgba(0, 0, 255, .2)
+
+  button
+    float: right
+  .log
+    overflow: auto
+    padding: 4px 8px
+    border-bottom: 1px solid $light
+  .action
+    float: left
+  .comment
+    float: right
+    margin-right: 1em
+    border: 0
+    background: transparent
+    font-family: 'minion-pro-1', 'minion-pro-2', Palatino, Georgia, 'Times New Roman', serif
+    font-size: 105%
+    width: 60%
+    text-align: right
+    &:focus
+      background-color: rgba(255, 255, 255, .7)

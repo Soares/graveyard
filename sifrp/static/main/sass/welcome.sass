@@ -1,0 +1,108 @@
+#login
+  margin: 1em auto
+  overflow: auto
+  text-align: center
+  width: 350px
+
+  a.standard
+    font-size: 20px
+    line-height: 32px
+    height: 32px
+    padding: 5px
+    display: block
+    font-weight: bold
+    margin: 0
+    text-decoration: none
+    border-radius: 4px
+    span
+      height: 32px
+      line-height: 32px
+      display: block
+      float: left
+      margin-right: 1em
+    img
+      width: 32px
+      height: 32px
+      float: right
+    &:hover
+      font-weight: bolder
+      background: #ccc
+
+  a.show
+    cursor: pointer
+    position: relative
+    padding-right: 1em
+    margin-bottom: 1em
+    margin-top: 10px
+    text-decoration: none
+    font-size: 80%
+    color: #008
+    font-weight: normal
+    &:hover
+      color: #00f
+    &.provider
+      float: left
+    &.local
+      float: right
+    span.closed, span.open
+      font-size: 70%
+      position: absolute
+      right: 0
+      top: 20%
+    .closed
+      display: inline
+    .open
+      display: none
+    &.open .closed
+      display: none
+    &.open .open
+      display: inline
+
+  .advanced
+    overflow: auto
+    display: none
+    &.open
+      display: block
+    width: 100%
+    label
+      color: #999
+      font-size: 80%
+      text-align: left
+    input
+      width: 100%
+      float: left
+      &.error
+        border-color: red
+    button.login
+      float: right
+      padding-right: 0
+      margin-right: 0
+
+  .advanced form
+    display: none
+    &.active
+      display: block
+    button[type=button]
+      opacity: .5
+    button.register
+      float: right
+      margin-right: 3px
+    a.reset
+      background: none
+      padding: 0
+      display: inline
+      border: 0
+      float: left
+      color: blue
+      font-size: 80%
+      text-decoration: none
+      &:hover
+        color: #008
+        text-decoration: underline
+    div.error
+      color: #C00
+    div.field.error
+      margin-top: 1em
+      text-align: left
+    div.field.error+input
+      border-color: #C00

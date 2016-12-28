@@ -1,0 +1,83 @@
+@import utility/sass/colors
+
+.quality.dialog.list
+  font-family: 'minion-pro-1', 'minion-pro-2', Palatino, Georgia, 'Times New Roman', serif
+
+  .quality.content
+    padding: 0
+
+  .description
+    padding: 1em
+
+  .name
+    margin-right: .5em
+  .category
+    float: right
+    margin-right: .5em
+
+  .requirements
+    .requirement
+      overflow: auto
+      padding: .5em
+      background: transparent
+      border: 0
+      font-family: 'minion-pro-1', 'minion-pro-2', Palatino, Georgia, 'Times New Roman', serif
+      font-weight: bold
+    .message
+      float: left
+    .ui-icon
+      float: right
+
+  .passed .requirement
+    color: #666666
+  .failed .requirement
+    color: #660000
+
+  .inputs
+    overflow: auto
+    margin: 1em
+      top: 0
+    .options
+      float: left
+    select, input
+      display: block
+      width: 200px
+
+.quality.dialog.source
+  .question
+    margin-top: 1em
+  .buttonset
+    text-align: center
+    margin: 1em
+
+
+#benefits, #drawbacks
+  .header
+    overflow: auto
+    padding: 4px
+      left: 12px
+    .ui-button
+      float: right
+    label
+      float: left
+
+  .content
+    margin: 0
+      bottom: 2em
+    min-height: 8em
+    padding: 0
+    border: 0
+    .quality
+      width: 100%
+      box-sizing: border-box
+      overflow: auto
+      border-bottom: 1px solid #aaa
+      padding: 4px 8px
+      button.remove, .source
+        float: right
+        margin-left: .5em
+      button.open, .name, .options
+        float: left
+        margin-right: .5em
+      &:last-child
+        border-bottom: 0

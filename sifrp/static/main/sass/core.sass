@@ -1,0 +1,41 @@
+@import utility/sass/colors
+@import utility/sass/patterns
+
+body
+  @include fiber(#35414f)
+  overflow: auto
+
+#main
+  background-color: $white
+  text-align: center
+  padding: 4px
+  .content
+    padding: 4em
+
+.ui-dialog.fixed
+  position: fixed
+
+.ui-widget-overlay
+  background: $dark
+
+.ui-dialog-content > table.ordered
+
+  width: 100%
+  th
+    text-align: left
+  td
+    text-align: right
+
+#dialogs
+  display: none
+
+.ui-dialog-content
+  input, textarea
+    padding: 3px
+    border: 0
+    font-family: 'minion-pro-1', 'minion-pro-2', Palatino, Georgia, 'Times New Roman', serif
+    background: transparent
+
+    &:focus
+      background-color: rgba(255, 255, 255, .7)
+      border-width: 0

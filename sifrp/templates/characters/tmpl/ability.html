@@ -1,0 +1,19 @@
+{% verbatim %}
+<script id="tmpl-ability" type="text/x-jquery-tmpl">
+    <div class="ability">
+        <button class="opener closed">▼</button>
+        <button class="ability">
+            ${ability.title()}
+            <input type="number" min="0">
+        </button>
+        <div class="specialties closed"></div>
+    </div>
+</script>
+
+<script id="tmpl-specialty" type="text/x-jquery-tmpl">
+    <button class="specialty">
+        ${specialty.title()}
+        <input type="number" min="0">
+    </button>
+</script>
+{% endverbatim %}
