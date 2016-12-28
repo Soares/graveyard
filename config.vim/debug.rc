@@ -1,0 +1,10 @@
+" Contains some core commands that make me comfortable and probably aren't
+" breaking anything.
+set encoding=utf-8
+set nocompatible
+set backspace=indent,eol,start  " Make backspace sane.
+noremap ; :
+" This could break things if you have plugins in your runtimepath by default.
+" I don't. They're all either in local/ or bundle/.
+filetype plugin indent on
+" vim:ft=vim

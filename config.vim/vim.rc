@@ -1,0 +1,340 @@
+set encoding=utf-8              " Default to utf-8
+set nocompatible                " Should be automatic, but better safe…
+set autoindent                  " Copy indent from current line.
+set nocindent nosmartindent     " Because we're autoindenting!
+set backspace=indent,eol,start  " Make backspace sane.
+set cursorline                  " Highlight the current line.
+set hidden                      " Allow buffer backgrounding.
+set scrolloff=3                 " Add top/bottom scroll margins.
+set ttyfast                     " Don't hold out on us.
+set lazyredraw                  " Make drawing faster.
+set visualbell                  " Don't make noise.
+set shell=sh                    " For compatibility.
+
+" Basic Preferences:
+let mapleader=","             " Must be set before plugins load.
+set backup                    " Always be safe.
+set clipboard=unnamed         " Yank to the X window clipboard
+set formatoptions=cqn1j       " :help fo-table.
+set gdefault                  " Replace globally by default.
+set history=1000              " Remember a lot
+set incsearch                 " Search incrementally as I type.
+set relativenumber            " Make line numbers cursor-relative.
+set number                    " Make the current line show absolutely.
+set showcmd                   " Show the last command.
+set showmatch                 " When a bracket is typed show its match.
+set smartcase ignorecase      " Ignore case unless there are cased characters.
+set smarttab                  " Shiftwidth is only for indents.
+set splitbelow splitright     " Windows should split in the direction I read.
+set undofile                  " Undo across sessions.
+set viewoptions=cursor,folds  " Save fold & cursor locations.
+set viewoptions+=unix,slash   " Make windows views compatible.
+set wildmenu                  " Enhanced completion.
+set wildmode=list:longest     " Act like shell completion.
+set winminheight=0            " Squish windows as much as you like.
+
+
+" Hidden Characters:
+set listchars=tab:▷\ ,eol:¬,extends:»,precedes:«
+
+
+set tabstop=4       " A sensible default.
+" set shiftwidth=0    " Use the tabstop.
+" set softtabstop=-1  " Delete spaces like tabs.
+" TODO
+set shiftwidth=4    " Use the tabstop.
+set softtabstop=4  " Delete spaces like tabs.
+
+
+" Controversial Preferences:
+" set modelines=0 if you don't want editor commands in your files.
+" Modelines also has potential security concerns. I don't often use them, but
+" I always use them in help files and I like to onor other peoples' usage.
+
+
+" Timing Out: Ideally we want no timeouts when there's a map conflict (my
+" mapping has no ambiguities) and immediate timeouts for keycodes (I don't
+" type escape sequences manually). We can't have 0 keycode timeout len because
+" escaped characters (arrow keys etc.) would break completely. So we set
+" a long timeoutlen and a short-but-nonzero ttimeoutlen.
+set timeout           " Allow timeouts.
+set timeoutlen=10000  " Timeout after 10 seconds for map conflicts.
+set ttimeoutlen=10    " Timeout as fast as possible for keycodes.
+
+
+" Quickfix Behavior:
+" Automatically close the quickfix window. I'll reopen it if I want it.
+augroup quickfix
+	autocmd!
+	autocmd BufEnter *? cclose
+augroup end
+
+
+" Ignored Filetypes:
+let wildignore = join([
+\	'*.aux',
+\	'*.bak',
+\	'*.class',
+\	'*.dll',
+\	'*.exe',
+\	'*.gif',
+\	'*.jpeg',
+\	'*.jpg',
+\	'*.o',
+\	'*.png',
+\	'*.pyc',
+\	'dist/**',
+\	'tags',
+\	], ',')
+
+
+" Custom Digraphs:
+digraph ..  08230 " …
+digraph --  08212 " —
+digraph '!  00161 " ¡
+digraph '?  00191 " ¿
+digraph /?  11822 " ⸮
+digraph !?  08253 " ‽
+digraph !!  08252 " ‼
+digraph @-  03675 " ๛
+
+digraph -v  09166 " ⏎
+digraph v-  08595 " ↓
+digraph -/  10003 " ✓
+digraph xx  10005 " ✕
+digraph []  09633 " □
+digraph :(  09785 " ☹ )
+digraph <2  08656 " ⇐
+
+digraph af  8728 " ∘
+digraph <\| 9001 " 〈
+digraph \|> 9002 " 〉
+
+digraph <=  8804 " ≤
+digraph no  0172 " ¬
+digraph an  8743 " ∧
+digraph or  8744 " ∨
+digraph TE  8707 " ∃
+digraph Ex  8707 " ∃
+digraph FA  8704 " ∀
+digraph Fa  8704 " ∀
+digraph in  8712 " ∈
+digraph Un  8746 " ∪
+digraph In  8745 " ∩
+digraph Su  8838 " ⊆
+digraph SU  8834 " ⊂
+digraph \|- 8866 " ⊢
+digraph -\| 8867 " ⊣
+digraph TT  8868 " ⊤
+digraph FF  8869 " ⊥
+digraph \|= 8871 " ⊧
+digraph \-  8873 " ⊩
+digraph !\| 8879 " ⊯
+digraph \|\| 449 " ǁ
+digraph =~  8780 " ≌
+digraph ~=  8771 " ≃
+
+digraph al 945 " α
+digraph be 946 " β
+digraph ga 947 " γ
+digraph de 948 " δ
+digraph ep 949 " ε
+digraph ze 950 " ζ
+digraph et 951 " η
+digraph th 952 " θ
+digraph io 953 " ι
+digraph ka 954 " κ
+digraph la 955 " λ
+digraph mu 956 " μ
+digraph nu 957 " ν
+digraph ks 958 " ξ
+digraph oi 959 " ο
+digraph pi 960 " π
+digraph rh 961 " ρ
+digraph sg 962 " ς
+digraph si 963 " σ
+digraph ta 964 " τ
+digraph up 965 " υ
+digraph ph 966 " φ
+digraph ch 967 " χ
+digraph ps 968 " ψ
+digraph om 969 " ω
+
+digraph Al 913 " Α
+digraph Be 914 " Β
+digraph Ga 915 " Γ
+digraph De 916 " Δ
+digraph Ep 917 " Ε
+digraph Ze 918 " Ζ
+digraph Et 919 " Η
+digraph Th 920 " Θ
+digraph Io 921 " Ι
+digraph Ka 922 " Κ
+digraph La 923 " Λ
+digraph Mu 924 " Μ
+digraph Nu 925 " Ν
+digraph Xs 926 " Ξ
+digraph Oi 927 " Ο
+digraph Pi 928 " Π
+digraph Rh 929 " Ρ
+digraph Si 931 " Σ
+digraph Ta 932 " Τ
+digraph Up 933 " Υ
+digraph Ph 934 " Φ
+digraph Ch 935 " Χ
+digraph Ps 936 " Ψ
+digraph Om 937 " Ω
+
+
+" System Discovery:
+let s:slash = '/'  " The system path separator
+
+
+" XDG Spec Compliance:
+function! s:getenv(var, default)
+	return empty(a:var) ? a:default : a:var
+endfunction
+let s:confighome = s:getenv($XDG_CONFIG_HOME, $HOME . '/.config')
+let s:datahome = s:getenv($XDG_DATA_HOME, $HOME . '/.local/share')
+
+
+" Vim Home Discovery:
+let s:thisdir = expand('<sfile>:p:h')
+let s:vimhome = s:confighome.s:slash.'vim'
+if !isdirectory(s:vimhome)
+	call mkdir(s:vimhome, 'p')
+endif
+let s:datadir = s:datahome.s:slash.'vim'
+if !isdirectory(s:datadir)
+	call mkdir(s:datadir, 'p')
+endif
+let s:bundle = s:vimhome.s:slash.'bundle'
+if !isdirectory(s:bundle)
+	call mkdir(s:bundle, 'p')
+endif
+let s:local = s:vimhome.s:slash.'local'
+if !isdirectory(s:local)
+	call mkdir(s:local, 'p')
+endif
+
+
+" Metadata Storage:
+let &dir = s:datadir.s:slash.'swp'
+if !isdirectory(&dir)
+	call mkdir(&dir, 'p')
+endif
+let &viewdir = s:datadir.s:slash.'view'
+if !isdirectory(&viewdir)
+	call mkdir(&viewdir, 'p')
+endif
+let &undodir = s:datadir.s:slash.'undo'
+if !isdirectory(&undodir)
+	call mkdir(&undodir, 'p')
+endif
+let &backupdir = s:datadir.s:slash.'backup'
+if !isdirectory(&backupdir)
+	call mkdir(&backupdir, 'p')
+endif
+let &viminfo = "\"4,'100,/100,:100,h,f1,n".s:datadir.s:slash.'info'
+
+
+" Custom Spell Dictionaries:
+let s:spell8res = join([s:local, 'so8res', 'spell', 'words.utf-8.add'], s:slash)
+let s:spellaahc = join([s:local, 'laahc', 'spell', 'laahc.utf-8.add'], s:slash)
+let s:spellfiles = [s:spell8res, s:spellaahc]
+let &spf = join(s:spellfiles, ',')
+
+
+" Plugin Management:
+filetype off
+let s:vundle = s:bundle.s:slash.'vundle'
+if !isdirectory(s:vundle)
+	call system('git clone https://github.com/gmarik/vundle '.s:vundle)
+endif
+let &rtp = &rtp.','.s:vundle
+call vundle#rc(s:bundle)
+
+
+" External Plugins:
+if exists(':Bundle')
+	" Management:
+	Bundle 'gmarik/vundle'
+
+	" Styles:
+	Bundle 'Soares/solarized.vim'
+
+	" Language Support:
+	Bundle 'Soares/fish.vim'
+	Bundle 'kchmck/vim-coffee-script'
+	Bundle 'tpope/vim-markdown'
+	Bundle 'vim-scripts/yaml.vim'
+	Bundle 'wavded/vim-stylus'
+
+ 	" Enhancements:
+	let g:longline_automap = 1
+ 	Bundle 'Soares/longline.vim'
+
+	let g:trailguide_automap = 1
+	Bundle 'Soares/trailguide.vim'
+
+ 	let g:write_auto = ['text', 'story', 'markdown', 'help!']
+ 	Bundle 'Soares/write.vim'
+
+	let g:ctrlp_map = ''
+	let g:ctrlp_working_path_mode = 'ra'
+	let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn\|build\|dist$'
+	let g:ctrlp_extensions = ['tag', 'quickfix', 'undo']
+	Bundle 'kien/ctrlp.vim'
+
+	let g:syntastic_enable_signs = 0
+	let g:syntastic_auto_loc_list = 1
+	let g:syntastic_mode_map = {'mode': 'passive'}
+	Bundle 'scrooloose/syntastic'
+
+	let g:session_directory = s:datadir.s:slash.'sessions'
+	let g:session_autosave = 'no'
+	let g:session_autoload = 'no'
+	Bundle "xolox/vim-session"
+
+	Bundle 'Soares/ack.vim'
+	Bundle 'Soares/butane.vim'
+	Bundle 'Soares/eunuch.vim'
+	Bundle 'Soares/tabdiff.vim'
+	Bundle 'Soares/viewport.vim'
+	Bundle 'tpope/vim-commentary'
+	Bundle 'tpope/vim-fugitive'
+	Bundle 'tpope/vim-repeat'
+	Bundle 'tpope/vim-surround'
+endif
+
+
+" Runtimepath Fixing:
+let s:befores = glob(s:local.s:slash.'*', 0, 1)
+let s:befores += filter(split(&rtp, ','), 'v:val !~ "'.s:slash.'after$"')
+let s:afters = filter(split(&rtp, ','), 'v:val =~ "'.s:slash.'after$"')
+let s:afters += glob(s:local.s:slash.'**'.s:slash.'after', 0, 1)
+" Reminder: Vim sometimes puts files in the first writable directory of &rtp.
+let &runtimepath = join([s:vimhome] + s:befores + s:afters, ',')
+
+
+" Plugin Execution:
+filetype plugin indent on
+
+
+" Custom Commands:
+" Toggle Line Numbers: Remember whether they were relative.
+command! Nu if &nu || &rnu | setl nonu nornu | else | setl nu< rnu< | endif
+
+
+" Unimplemeted Filetypes: TODO(So8res) make ftplugins for all these.
+augroup filetypes
+	autocmd!
+	autocmd BufNewFile,BufReadPre *.story setf story | set laststatus=1
+	autocmd BufNewFile,BufRead *.cabal set et sw=2 ts=2 sts=2
+	autocmd BufNewFile,BufRead *.rkt set et sw=2 ts=2 sts=2
+	autocmd FileType * set fo-=t
+augroup end
+
+
+" This file is named vim.rc, so the filetype is incorrectly detected:
+" vim:ft=vim
