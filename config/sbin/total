@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+# count = Integer(`wc -w ~/Resurgence/src/01-Theatrics/02-Lightstorm/*.md`.lines.grep(/total/)[0].strip.split(' ')[0])
+# count += Integer(`wc -w ~/Resurgence/src/01-Theatrics/03-Speaker/*.md`.lines.grep(/total/)[0].strip.split(' ')[0])
+# count += Integer(`wc -w ~/Resurgence/src/02-Motion/01-Seeker/*.md`.lines.grep(/total/)[0].strip.split(' ')[0])
+# count -= 3679 # Before February
+# count -= 625 # Copypasta from pre-februray (Merged into Memories from Schooled)
+# count += 889 # Copypasta deleted from pre-februrary (Discarded from Schooled)
+# count -= 24406 # Brought Speaker into scope
+count = Integer(`wc -w ~/Speaker/*.md`.lines.grep(/total/)[0].strip.split(' ')[0])
+count -= 10199 # Before August
+print count, "\n"

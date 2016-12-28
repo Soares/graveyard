@@ -1,0 +1,24 @@
+#!/usr/bin/env ruby
+# TODO: move mapped? and show into zsh somewhere
+# TODO: doesn't actually work.
+
+begin
+    active = Integer `xdotool getactivewindow`
+    terms = `xdotool search --class urxvt`.split.map {|s| Integer s}
+    if terms.include? active
+        # webs = `xdotool search --name pentadactyl`.split.map {|s| Integer s}
+        webs = `xdotool search --class google-chrome`.split.map {|s| Integer s}
+        if webs.length > 0
+            webs.each do |n|
+                `xdotool windowactivate #{n} &> /dev/null`
+            end
+        else
+            # TODO: dry this out
+            # `firefox -P default -pentadactyl
+            # '+u=/home/nate/.config/pentadactyl/pentadactyl.rc'`
+            `chromium`
+        end
+    else
+        `xdotool windowactivate #{terms[0]} &> /dev/null`
+    end
+end

@@ -1,0 +1,2 @@
+amixer sset Master 100%
+mplayer ~/Media/Music/Dropkick\ Murphys/The\ Warriors\ Code/02\ The\ Warrior\'s\ Code.mp3 > /dev/null &

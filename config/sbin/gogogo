@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+
+# /home/nate/.ex/netup
+if [ ! "`pgrep dropbox`" ]; then
+	$bin/dropbox start
+fi
+/home/nate/.ex/safex

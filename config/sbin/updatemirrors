@@ -1,0 +1,16 @@
+#!/bin/sh
+[ "$UID" != 0 ] && su=sudo
+country='United+States'
+url="http://www.archlinux.org/mirrorlist?country=$country&protocol=ftp&protocol=http&ip_version=4&use_mirror_status=on"
+
+tmplist=$(mktemp --suffix=mirrorlist)
+tmprank=$(mktemp --suffix=rankedmirrors)
+wget -qO- "$url" | sed 's/^#Server/Server/g' > "$tmplist"
+{ echo "Ranking mirrors..."
+	rankmirrors -n 8 "$tmplist" | tee "$tmprank"; } &&
+{ echo "Backing up the original mirrorlist..."
+	$su mv -i /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.orig; } &&
+{ echo "Rotating the new list into place..."
+	$su mv -i "$tmprank" /etc/pacman.d/mirrorlist; }
+{ echo "Granting read perms..."
+	$su chmod go+r /etc/pacman.d/mirrorlist; }

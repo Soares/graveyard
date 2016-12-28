@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+
+if ARGV.length != 2
+	puts "Please give SSID and Passphrase"
+	exit 1
+end
+
+open, ssid, pass, hex, close = `wpa_passphrase "#{ARGV[0]}" "#{ARGV[1]}"`.split "\n"
+lines = [open, ssid,
+	"\tproto=RSN",
+	"\tkey_mgmt=WPA-PSK",
+	"\tpairwise=CCMP TKIP",
+	"\tgroup=CCMP TKIP",
+	hex, close]
+
+File.open('/etc/wpa_supplicant.conf', 'a') do |f|
+	f.write lines.join "\n"
+	f.write "\n"
+end

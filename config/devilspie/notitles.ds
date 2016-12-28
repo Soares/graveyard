@@ -1,0 +1,15 @@
+(if (is (window_class) "Firefox")
+  (begin
+    (maximize)
+    (undecorate)))
+
+(if (is (application_name) "urxvt")
+  (begin
+    (maximize)
+    (opacity 95)
+    (undecorate)))
+
+(if (is (window_class) "Google-chrome")
+  (begin
+    (maximize)
+    (undecorate)))

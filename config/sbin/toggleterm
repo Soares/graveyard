@@ -1,0 +1,9 @@
+#!/usr/bin/ruby
+term = :urxvt
+
+terms = `ps -u nate | grep #{term}`
+if terms == ''
+  `#{term}`
+else
+  `killall #{term}`
+end

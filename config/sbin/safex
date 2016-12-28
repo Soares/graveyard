@@ -1,0 +1,1 @@
+exec nohup $HOME/.local/sbin/nicex > $XDG_CACHE_HOME/X11/log & vlock

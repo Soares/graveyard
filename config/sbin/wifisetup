@@ -1,0 +1,5 @@
+$wireless=$HOME/.opt/wireless
+$su = sudo
+
+$su $wireles/enable
+$su $wireless/connect

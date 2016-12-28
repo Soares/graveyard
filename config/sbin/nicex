@@ -1,0 +1,1 @@
+startx $XDG_CONFIG_HOME/X11/initrc -- -auth $XDG_CACHE_HOME/X11/auth

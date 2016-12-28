@@ -1,0 +1,12 @@
+#!/usr/bin/env zsh
+local bin=$HOME/.ex
+
+if [ ! "$(ls /var/run/dhcpcd/resolv.conf/)" ]; then
+	echo "Starting wifi..."
+	sudo $bin/wifiup
+	sudo $bin/wifion &
+fi
+
+if [ ! "`pgrep dropbox`" ]; then
+	$bin/dropbox start
+fi

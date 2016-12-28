@@ -1,0 +1,41 @@
+setw -g utf8 on
+set -g status off
+set -g mode-keys vi
+# set -g default-terminal "tmux"
+set -g default-shell /usr/local/bin/fish
+
+bind-key '\;' command-prompt
+bind-key '@' last-pane
+
+unbind-key c
+unbind-key [
+
+# More vim-like window management
+bind-key n new-window
+bind-key s split-window
+bind-key v split-window -h
+bind-key space next-window
+bind-key C-space previous-window
+bind-key h select-pane -L
+bind-key l select-pane -R
+bind-key j select-pane -U
+bind-key k select-pane -D
+bind-key C-j resize-pane -D 4
+bind-key C-k resize-pane -U 4
+bind-key C-h resize-pane -L 4
+bind-key C-l resize-pane -R 4
+
+# More vi-like copying
+bind-key c copy-mode
+bind-key p paste-buffer
+bind-key -t vi-copy v begin-selection
+bind-key -t vi-copy V rectangle-toggle
+bind-key -t vi-copy y copy-selection
+bind-key -t vi-edit C-u delete-line
+
+# System keyboard buffer
+bind C-p run "tmux set-buffer \"$(xsel -ob)\"; tmux paste-buffer"
+bind C-y run "tmux show-buffer | xsel -ib"
+
+# MAC ONLY
+set-option -g default-command "reattach-to-user-namespace -l fish"

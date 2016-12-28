@@ -1,0 +1,68 @@
+#!/usr/bin/env ruby
+# count = Integer(`wc -w ~/Resurgence/src/01-Theatrics/02-Lightstorm/*.md`.lines.grep(/total/)[0].strip.split(' ')[0])
+# count += Integer(`wc -w ~/Resurgence/src/01-Theatrics/03-Speaker/*.md`.lines.grep(/total/)[0].strip.split(' ')[0])
+# count += Integer(`wc -w ~/Resurgence/src/02-Motion/01-Seeker/*.md`.lines.grep(/total/)[0].strip.split(' ')[0])
+# count -= 3679 # Before February
+# count -= 1733 # 1st
+# count -= 2009 # 2nd
+# count -= 1841 # 3rd
+# count -= 625 # Copypasta from pre-februray (Merged into Memories from Schooled)
+# count += 889 # Copypasta deleted from pre-februrary (Discarded from Schooled)
+# count -= 1677 # 4th
+# count -= 1502 # 5th
+# count -= 1834 # 6th
+# count -= 2100 # 7th
+# count -= 1552 # 8th
+# count -= 1364 # 9th
+# count -= 1757 # 10th
+# count -= 1673 # 11th
+# count -= 3058 # 12th
+# count -= 1911 # 13th
+# count -= 2506 # 14th
+# count -= 1148 # 15th
+# count -= 1627 # 16th
+# count -= 24406 # Brought Speaker into scope
+# # 17th: Morning merged in to 19th, afternoon Ben went camping
+# # 18th: Ben still camping
+# count -= 1452 # 19th
+# count -= 2678 # 20th
+# count -= 2479 # 21st
+# count -= 1726 # 22nd
+# count -= 2734 # 23rd
+# count -= 1705 # 24th
+# count -= 4238 # 25th
+# count -= 4000 # 26th
+# count -= 2006 # 27th
+
+count = Integer(`wc -w ~/Speaker/*.md`.lines.grep(/total/)[0].strip.split(' ')[0])
+count -= 10199 # Before August
+count -= 1710  # Aug 1
+count -= 1773  # Aug 2
+count -= 1840  # Aug 3
+count -= 1961  # Aug 4
+count -= 1720  # Aug 5
+count -= 175   # Aug 6 :(
+count -= 850   # Aug 7 (NOT HELPING)
+count -= 2882  # Aug 8 :D CAUGHT UP BITCHES
+count -= 1614  # Aug 9 TAKE THAT
+count -= 623   # Aug 10 WHAT IS THIS SOCIAL BULLSHIT?
+count -= 1659  # Aug 11 Technically I gained some ground.
+count -= 362   # Aug 12 eh. Shut up.
+count -= 1134  # Aug 13 four digits, at least...
+count -= 86    # Aug 14 HOW DID THIS HAPPEN?
+count -= 2826  # Aug 15 Catching up.
+count -= 2028  # Aug 16 NOW YOU PAY FOR IT
+count -= 1495  # Aug 17 :(( so close.
+count -= 432   # Aug 18 And it was supposed to be a good day.
+count -= 97    # Aug 19 I don't want to talk about it.
+# Aug 20 ...
+# Aug 21 ...
+count -= 2712  # Aug 22 Now we talking son.
+count -= 5079  # Aug 23 *they're catching up*
+count -= 6016  # Aug 24 OMFG yes caught up.
+count -= 2215  # Aug 25 Slowing down.
+count -= 975   # Aug 26 FFFFFFFUUUUUUUUUUUU
+count -= 3058  # Aug 27 Wooooooooooooooooot
+count -= 2042  # Aug 28 Almost there. Almost there.
+count -= 2536  # Aug 29 100 to go!
+print count, "\n"

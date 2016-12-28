@@ -1,0 +1,2 @@
+eval "$BROWSER -P default >/dev/null 2>/dev/null &"
+disown
