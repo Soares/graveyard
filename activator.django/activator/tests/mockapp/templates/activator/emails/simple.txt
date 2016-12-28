@@ -1,0 +1,3 @@
+This is a simple activation email. Please follow the link below.
+
+{{ activation_request.get_activate_url }}

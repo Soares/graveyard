@@ -1,0 +1,4 @@
+Django Social Auth code borrowed from omab
+https://github.com/omab/django-social-auth
+Original Twitter Social Auth Copyright goes to Henrik Lied (henriklied)
+Code borrowed from https://github.com/henriklied/django-twitter-oauth
