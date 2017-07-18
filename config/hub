@@ -1,4 +1,4 @@
 ---
 github.com:
-- user: Soares
-  oauth_token: 1be9dbc2a690f79611beae7690f77edf0c1a35c0
+- user: "Your github username"
+  oauth_token: "Your OAuth Key Here"
